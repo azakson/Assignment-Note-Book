@@ -13,6 +13,8 @@
 		5841127725D2ECD000ACEDC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5841127625D2ECD000ACEDC1 /* Preview Assets.xcassets */; };
 		5841128225D2ECD000ACEDC1 /* Assignment_Note_BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5841128125D2ECD000ACEDC1 /* Assignment_Note_BookTests.swift */; };
 		5841128D25D2ECD000ACEDC1 /* Assignment_Note_BookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5841128C25D2ECD000ACEDC1 /* Assignment_Note_BookUITests.swift */; };
+		5841129E25D2F58500ACEDC1 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5841129D25D2F58500ACEDC1 /* Assignments.swift */; };
+		584112A325D2F6CC00ACEDC1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584112A225D2F6CC00ACEDC1 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		5841128825D2ECD000ACEDC1 /* Assignment Note BookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assignment Note BookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5841128C25D2ECD000ACEDC1 /* Assignment_Note_BookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment_Note_BookUITests.swift; sourceTree = "<group>"; };
 		5841128E25D2ECD000ACEDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5841129D25D2F58500ACEDC1 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
+		584112A225D2F6CC00ACEDC1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				5841126F25D2ECCA00ACEDC1 /* Assignment_Note_BookApp.swift */,
 				5841127125D2ECCA00ACEDC1 /* ContentView.swift */,
+				584112A225D2F6CC00ACEDC1 /* SwiftUIView.swift */,
+				5841129D25D2F58500ACEDC1 /* Assignments.swift */,
 				5841127325D2ECD000ACEDC1 /* Assets.xcassets */,
 				5841127825D2ECD000ACEDC1 /* Info.plist */,
 				5841127525D2ECD000ACEDC1 /* Preview Content */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5841127225D2ECCA00ACEDC1 /* ContentView.swift in Sources */,
+				5841129E25D2F58500ACEDC1 /* Assignments.swift in Sources */,
+				584112A325D2F6CC00ACEDC1 /* SwiftUIView.swift in Sources */,
 				5841127025D2ECCA00ACEDC1 /* Assignment_Note_BookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
