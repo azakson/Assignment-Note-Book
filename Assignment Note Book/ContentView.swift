@@ -19,7 +19,7 @@ struct ContentView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(item.classes)
-                                .font(.title)
+                                .font(.headline)
                             Text(item.description)
                         }
                         Spacer()
