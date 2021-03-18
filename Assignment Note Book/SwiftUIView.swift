@@ -26,7 +26,7 @@ struct AddView: View {
                 TextField("Description", text: $description)
                 DatePicker("DueDate", selection: $dueDate, displayedComponents: .date)
             }
-            .navigationBarTitle("New Assignments")
+            .navigationBarTitle("New Assignment")
             .navigationBarItems(trailing: Button("Save") {
                 if course.count > 0 && description.count > 0 {
                     let item = Assignment(id: UUID(), classes: course, description: description, dueDate: dueDate)
