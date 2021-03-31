@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var assignmentList = AssignmentList()
-    @State private var showAddview = false
+    @ObservedObject var assignmentsList = AssignmentList()
+    @State private var showingAddView = false
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             List {
-                ForEach(assignmentList.items) { item in
+                ForEach(assignmentsList.items) {item in
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(item.classes)
+                            Text(item.course)
                                 .font(.headline)
                             Text(item.description)
                         }
@@ -27,20 +26,21 @@ struct ContentView: View {
                     }
                 }
                 .onMove(perform: { indices, newOffset in
-                    assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
+                    assignmentsList.items.move(fromOffsets: indices, toOffset: newOffset)
                 })
                 .onDelete(perform: { indexSet in
-                    assignmentList.items.remove(atOffsets: indexSet)
+                    assignmentsList.items.remove(atOffsets: indexSet)
                 })
             }
-            .sheet(isPresented: $showAddview, content: {
-                AddView(assignmentList: assignmentList)
+            .sheet(isPresented: $showingAddView, content: {
+                SwiftUIView(assignmentsList: assignmentsList)
             })
-            navigationBarTitle("Assignment Notebook")
-            navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                                                                        showAddview = true }) {
-                Image(systemName: "plus" )
-            })
+            .navigationBarTitle("Assignments")
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                                                    showingAddView = true }) {
+                                    Image(systemName: "plus")
+                                })
         }
     }
 }
@@ -53,7 +53,10 @@ struct ContentView_Previews: PreviewProvider {
 
 struct Assignment: Identifiable, Codable {
     var id = UUID()
-    var classes = String()
+    var course = String()
     var description = String()
     var dueDate = Date()
 }
+
+
+

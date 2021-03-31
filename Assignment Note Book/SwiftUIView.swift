@@ -1,15 +1,16 @@
 //
-//  SwiftUIView.swift
-//  Assignment Note Book
+//  AddItemView.swift
+//  to do
 //
-//  Created by Avery Zakson on 2/9/21.
+//  Created by Avery Zakson on 2/2/21.
 //
 
 import SwiftUI
 
-struct AddView: View {
-    @ObservedObject var assignmentList: AssignmentList
-    @State private var course = ""
+struct SwiftUIView: View {
+    
+    @ObservedObject var assignmentsList: AssignmentList
+    @State private var courses = ""
     @State private var description = ""
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
@@ -18,19 +19,22 @@ struct AddView: View {
     var body: some View {
         NavigationView {
             Form {
-                Picker("Course", selection: $course) {
-                    ForEach(Self.courses, id: \.self) { course in
-                        Text(course)
+                Picker("Course",  selection: $courses) {
+                    ForEach(Self.courses, id: \.self) { courses in
+                        Text(courses)
                     }
                 }
                 TextField("Description", text: $description)
-                DatePicker("DueDate", selection: $dueDate, displayedComponents: .date)
+                DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
             }
             .navigationBarTitle("New Assignment")
             .navigationBarItems(trailing: Button("Save") {
-                if course.count > 0 && description.count > 0 {
-                    let item = Assignment(id: UUID(), classes: course, description: description, dueDate: dueDate)
-                    assignmentList.items.append(item)
+                if(courses.count > 0 && description.count > 0) {
+                    let item = Assignment(id: UUID(),
+                                        course: courses,
+                                        description: description,
+                                        dueDate: dueDate)
+                    assignmentsList.items.append(item)
                     presentationMode.wrappedValue.dismiss()
                 }
             })
@@ -38,8 +42,8 @@ struct AddView: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(assignmentList: AssignmentList())
+        SwiftUIView(assignmentsList: AssignmentList())
     }
 }
